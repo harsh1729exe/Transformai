@@ -369,11 +369,46 @@ document.getElementById("file").addEventListener("change", function() {
 });
 
 function generateDemo() {
+    const result = document.getElementById("result");
 
-    document.getElementById("result").style.display = "block";
+    result.style.display = "block";
 
-    document.getElementById("result")
-        .scrollIntoView({ behavior: "smooth" });
+    result.innerHTML = `
+        <h2>Generated Output</h2>
+
+        <div class="result-box">
+            <h3>Executive Summary</h3>
+
+            <p>
+                Your content has been successfully processed.
+                The selected audience, language, tone and detail
+                preferences have been applied.
+            </p>
+
+            <br>
+
+            <strong>Key Insights</strong>
+
+            <ul style="margin-left:20px; margin-top:10px;">
+                <li>Main information identified from the uploaded content.</li>
+                <li>Important findings have been organized clearly.</li>
+                <li>The content is prepared for the selected audience.</li>
+            </ul>
+
+            <br>
+
+            <strong>Recommended Action</strong>
+
+            <p style="margin-top:8px;">
+                Review the generated content and customize it
+                according to your communication objective.
+            </p>
+        </div>
+    `;
+
+    result.scrollIntoView({
+        behavior: "smooth"
+    });
 
 }
 
